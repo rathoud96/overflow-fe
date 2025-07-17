@@ -539,6 +539,47 @@
   border-color: #0074cc;
 }
 
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+.accuracy-filter {
+  background-color: #ff6f00 !important;
+  color: white !important;
+  border-color: #ff6f00 !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.accuracy-filter:hover:not(:disabled) {
+  background-color: #e65100 !important;
+  border-color: #e65100 !important;
+}
+
+.accuracy-filter:disabled {
+  background-color: #ffb74d !important;
+  border-color: #ffb74d !important;
+  cursor: not-allowed;
+}
+
+.small-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
 /* Stack Overflow code snippet styles */
 .code-snippet {
   margin: 16px 0;

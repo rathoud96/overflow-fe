@@ -23,6 +23,7 @@ const QuestionPage = () => {
   const [question, setQuestion] = useState(location.state?.question || null);
   const [answers, setAnswers] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [rerankLoading, setRerankLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const loadQuestionData = async (questionId) => {
@@ -78,6 +79,7 @@ const QuestionPage = () => {
 
     console.log("Answers before constructing request payload:", answers);
 
+    setRerankLoading(true);
     try {
       const requestPayload = {
         question: question.title,
@@ -149,6 +151,8 @@ const QuestionPage = () => {
       }
     } catch (err) {
       console.error("Error applying accuracy filter:", err);
+    } finally {
+      setRerankLoading(false);
     }
   };
 
@@ -303,8 +307,16 @@ const QuestionPage = () => {
             <button
               onClick={handleAccuracyFilter}
               className="btn btn-secondary accuracy-filter"
+              disabled={rerankLoading}
             >
-              Filter by Accuracy
+              {rerankLoading ? (
+                <>
+                  <div className="loading-spinner small-spinner"></div>
+                  Reranking...
+                </>
+              ) : (
+                "Filter by Accuracy"
+              )}
             </button>
 
             {answers.length === 0 ? (
