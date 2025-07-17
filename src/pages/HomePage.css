@@ -1,0 +1,222 @@
+.home-page {
+  min-height: 100vh;
+  background: #f8f9f9;
+}
+
+.home-main {
+  padding: 48px 24px;
+}
+
+.home-hero {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-title {
+  font-size: 48px;
+  font-weight: normal;
+  color: #232629;
+  margin: 0 0 32px 0;
+  line-height: 1.2;
+}
+
+.home-search {
+  max-width: 500px;
+  margin: 0 auto 48px auto;
+}
+
+.home-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin-top: 64px;
+}
+
+.feature {
+  text-align: center;
+  padding: 24px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.feature h3 {
+  font-size: 21px;
+  color: #232629;
+  margin: 0 0 12px 0;
+}
+
+.feature p {
+  color: #6a737c;
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Recent searches section */
+.recent-searches {
+  max-width: 600px;
+  margin: 64px auto 0 auto;
+  text-align: left;
+}
+
+.recent-searches h2 {
+  font-size: 24px;
+  color: #232629;
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+.loading-recent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+  color: #6a737c;
+}
+
+.loading-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e4e6ea;
+  border-top: 2px solid #0a95ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-recent {
+  text-align: center;
+  padding: 32px;
+  color: #d0393e;
+}
+
+.error-recent .btn {
+  margin-top: 12px;
+}
+
+.recent-questions-list {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.recent-question-item {
+  border-bottom: 1px solid #e4e6ea;
+  padding: 16px 20px;
+  transition: background-color 0.2s ease;
+}
+
+.recent-question-item:last-child {
+  border-bottom: none;
+}
+
+.recent-question-item:hover {
+  background-color: #f8f9f9;
+}
+
+.recent-question-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.recent-question-link {
+  flex: 1;
+  background: none;
+  border: none;
+  text-align: left;
+  color: #0074cc;
+  font-size: 15px;
+  line-height: 1.4;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.recent-question-link:hover {
+  color: #0063a5;
+  text-decoration: underline;
+}
+
+.recent-question-date {
+  color: #6a737c;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.no-recent-searches {
+  text-align: center;
+  padding: 32px;
+  color: #6a737c;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.2s ease;
+}
+
+.btn-outline {
+  background: white;
+  color: #0074cc;
+  border-color: #0074cc;
+}
+
+.btn-outline:hover {
+  background: #0074cc;
+  color: white;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 32px;
+  }
+
+  .home-features {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .feature {
+    padding: 20px;
+  }
+
+  .recent-searches {
+    margin: 48px auto 0 auto;
+    padding: 0 16px;
+  }
+
+  .recent-question-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .recent-question-date {
+    align-self: flex-end;
+  }
+}
